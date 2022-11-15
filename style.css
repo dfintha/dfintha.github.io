@@ -34,6 +34,15 @@ body {
     color: var(--base1);
 }
 
+hr {
+    margin: 2em auto 2em auto;
+    border: 1px solid var(--base01);
+}
+
+main ul li a {
+    margin-left: 0em;
+}
+
 /* Scrollbar */
 
 ::-webkit-scrollbar {
@@ -80,6 +89,7 @@ table.header {
     padding-right: 0.5em;
 }
 
+main a,
 .header-navigation > a,
 .header-navigation > .header-here
 {
