@@ -128,13 +128,17 @@ main p {
 /* Code Blocks */
 
 main code {
+    padding: 0em 0.25em 0em 0.25em;
+    background: var(--base03);
+    font-family: var(--font-monospace);
+    font-weight: 500;
+}
+
+main code.codeblock {
     display: block;
     margin: auto;
     padding: 1em;
     width: 80ch;
-    background: var(--base03);
-    font-family: var(--font-monospace);
-    font-weight: 500;
     box-shadow: 0px 1px 5px var(--base03);
 }
 

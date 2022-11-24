@@ -22,8 +22,11 @@ function zoom(element) {
     let body = document.getElementsByTagName("body")[0];
     body.appendChild(container);
 
-    container.onclick = function(event) {
+    let removeZoomOverlay = function(event) {
         let body = document.getElementsByTagName("body")[0];
-        body.removeChild(event.target);
+        body.removeChild(container);
     };
+
+    img.onclick = removeZoomOverlay;
+    container.onclick = removeZoomOverlay;
 }
