@@ -127,14 +127,14 @@ main p {
 
 /* Code Blocks */
 
-main code {
+main code, main pre {
     padding: 0em 0.25em 0em 0.25em;
     background: var(--base03);
     font-family: var(--font-monospace);
     font-weight: 500;
 }
 
-main code.codeblock {
+main code.codeblock, main pre.codeblock {
     display: block;
     margin: auto;
     padding: 1em;
@@ -142,22 +142,27 @@ main code.codeblock {
     box-shadow: 0px 1px 5px var(--base03);
 }
 
-main code .keyword {
+main .codeblock .keyword,
+main .codeblock .typename {
     color: var(--yellow);
 }
 
-main code .preprocessor,
-main code .macro,
-main code .format {
+main .codeblock .preprocessor,
+main .codeblock .macro,
+main .codeblock .format {
     color: var(--orange);
 }
 
-main code .header,
-main code .string,
-main code .number {
+main .codeblock .header,
+main .codeblock .string,
+main .codeblock .number,
+main .codeblock .string .keyword,
+main .codeblock .string .typename {
     color: var(--cyan);
 }
 
-main code .comment {
+main .codeblock .comment,
+main .codeblock .comment .keyword,
+main .codeblock .comment .typename {
     color: var(--base00);
 }
