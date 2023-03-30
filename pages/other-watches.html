@@ -1,0 +1,93 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>dfintha's Site</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="shortcut icon" type="image/png" href="../favicon.png" />
+        <style>
+            .watch-datasheet ul {
+                margin-left: 2em;
+            }
+
+            .watch-datasheet td.watch-data-container {
+                padding: 1em;
+                width: 40em;
+                vertical-align: top;
+            }
+
+            .watch-picture-container  img {
+                padding: 0em 0.2em 0em 0.2em;
+                width: 12em;
+                height: 13em;
+                object-fit: cover;
+                border-radius: 1em;
+            }
+
+            .watch-excellent {
+                font-weight: bold;
+                color: var(--green);
+            }
+
+            .watch-appropriate {
+                font-weight: bold;
+                color: var(--yellow);
+            }
+
+            .watch-inappropriate {
+                font-weight: bold;
+                color: var(--red);
+            }
+        </style>
+    </head>
+    <body>
+        <script src="../scripts/zoom_image.js"></script>
+        <table class="header">
+            <tr>
+                <td class="header-brand">
+                    <span class="header-title">dfintha's Site</span>
+                </td>
+                <td class="header-navigation">
+                    <a href="../index.html">Index</a>
+                    <a href="../pages.html">Pages</a>
+                </td>
+            </tr>
+        </table>
+        <main>
+            <h1>Other Watches</h1>
+            <p>
+                This page contains information other watches, that I do not own,
+                but did some maintenance on them.
+            </p>
+
+            <h2>Q&Q T020J501</h2>
+            <table class="watch-datasheet">
+                <tr>
+                    <td class="watch-data-container">
+                        <ul>
+                            <li><b>Movement Type</b>: Quartz</li>
+                            <li><b>Battery Type</b>: SR621SW / SR60 / 364</li>
+                            <li><b>Water Resistance</b>: 50M</li>
+                            <li><b>Case Material</b>: Titanium</li>
+                            <li><b>Date of Manufacture</b>: Unknown</li>
+                            <li>
+                                <b>Status</b>:
+                                <span class="watch-excellent">
+                                    Battery replaced on 2023-03-30. Works and
+                                    keeps time.
+                                </span>
+                            </li>
+                            <li>Identified by the caseback engraving.</li>
+                        </ul>
+                    </td>
+                    <td class="watch-picture-container">
+                        <img src="../static/other-watches/qq-t020j501-front.jpg" alt="front view" onclick="zoom_image(this);" />
+                    </td>
+                    <td class="watch-picture-container">
+                        <img src="../static/other-watches/qq-t020j501-back.jpg" alt="back view" onclick="zoom_image(this);" />
+                    </td>
+                </tr>
+            </table>
+        </main>
+    </body>
+</html>
