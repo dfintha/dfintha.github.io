@@ -1,0 +1,299 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>dfintha's Site</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="shortcut icon" type="image/png" href="../favicon.png" />
+        <style>
+            #display {
+                text-align: center;
+                display: block;
+                margin: auto;
+                background-color: var(--base03);
+            }
+            table.number {
+                display: inline-block;
+                margin: 1.5em 0.5em 1em 0.5em;
+            }
+            .number tr td.segment {
+                background-color: var(--base02);
+                color: var(--base02);
+                font-size: 0pt;
+            }
+            .number tr td.active {
+                background-color: var(--red);
+                box-shadow: 0px 0px 5pt 2pt var(--red);
+            }
+            .binary {
+                font-family: var(--font-monospace);
+                padding-top: 1.5em;
+                font-size: 1em;
+            }
+            .number tr td.binary.active {
+                background-color: transparent;
+                box-shadow: none;
+                color: var(--red);
+            }
+            .button {
+                display: inline-block;
+                margin: 0.2em;
+                text-align: center;
+                vertical-align: middle;
+                width: 54px;
+                height: 2.2em;
+                padding-top: 0.8em;
+                background: var(--base03);
+                border-radius: 50%;
+                font-size: 1.2em;
+                font-family: var(--font-monospace);
+                cursor: pointer;
+            }
+            .thin-width { width: 10px; }
+            .full-width { width: 50px; }
+            .thin-height { height: 10px; }
+            .full-height { height: 50px; }
+        </style>
+    </head>
+    <body>
+        <table class="header">
+            <tr>
+                <td class="header-brand">
+                    <span class="header-title">dfintha's Site</span>
+                </td>
+                <td class="header-navigation">
+                    <a href="../index.html">Index</a>
+                    <a href="../pages.html">Pages</a>
+                </td>
+            </tr>
+        </table>
+        <main>
+            <h1>AS1108 Display Calculator</h1>
+            <p>
+                This small utility can be used to calculate binary values for
+                characters when using the AS1108 4-digit LED display driver. The
+                datasheet of the driver can be found
+                <a href="https://ams.com/documents/20143/36005/AS1108_DS000169_2-00.pdf">
+                    here
+                </a>
+                if more information is needed.
+            </p>
+            <div id="display">
+            </div>
+            <div id="buttons">
+                <h3>Digits</h3>
+                <div class="button" onclick="applySingle('0b01111110')">0</div>
+                <div class="button" onclick="applySingle('0b00110000')">1</div>
+                <div class="button" onclick="applySingle('0b01101101')">2</div>
+                <div class="button" onclick="applySingle('0b01111001')">3</div>
+                <div class="button" onclick="applySingle('0b00110011')">4</div>
+                <div class="button" onclick="applySingle('0b01011011')">5</div>
+                <div class="button" onclick="applySingle('0b01011111')">6</div>
+                <div class="button" onclick="applySingle('0b01110000')">7</div>
+                <div class="button" onclick="applySingle('0b01111111')">8</div>
+                <div class="button" onclick="applySingle('0b01111011')">9</div>
+                <h3>Uppercase Letters</h3>
+                <div class="button" onclick="applySingle('0b01110111')">A</div>
+                <div class="button" onclick="applySingle('0b01001110')">C</div>
+                <div class="button" onclick="applySingle('0b01001111')">E</div>
+                <div class="button" onclick="applySingle('0b01000111')">F</div>
+                <div class="button" onclick="applySingle('0b00110111')">H</div>
+                <div class="button" onclick="applySingle('0b00110000')">I</div>
+                <div class="button" onclick="applySingle('0b00111000')">J</div>
+                <div class="button" onclick="applySingle('0b00001110')">L</div>
+                <div class="button" onclick="applySingle('0b01111110')">O</div>
+                <div class="button" onclick="applySingle('0b01100111')">P</div>
+                <div class="button" onclick="applySingle('0b01011011')">S</div>
+                <div class="button" onclick="applySingle('0b00111110')">U</div>
+                <div class="button" onclick="applySingle('0b01101101')">Z</div>
+                <h3>Lowercase Letters</h3>
+                <div class="button" onclick="applySingle('0b00011111')">b</div>
+                <div class="button" onclick="applySingle('0b00001101')">c</div>
+                <div class="button" onclick="applySingle('0b00111101')">d</div>
+                <div class="button" onclick="applySingle('0b00010111')">h</div>
+                <div class="button" onclick="applySingle('0b00110000')">l</div>
+                <div class="button" onclick="applySingle('0b00010101')">n</div>
+                <div class="button" onclick="applySingle('0b00011101')">o</div>
+                <div class="button" onclick="applySingle('0b00000101')">r</div>
+                <div class="button" onclick="applySingle('0b00001111')">t</div>
+                <div class="button" onclick="applySingle('0b00011100')">u</div>
+                <div class="button" onclick="applySingle('0b00111011')">y</div>
+                <div class="button" onclick="applySingle('0b01011101')">ö</div>
+                <div class="button" onclick="applySingle('0b01011100')">ü</div>
+                <h3>Special Characters</h3>
+                <div class="button" onclick="applySingle('0b00000001')">-</div>
+                <div class="button" onclick="applySingle('0b00001000')">_</div>
+                <div class="button" onclick="applySingle('0b01100011')">°</div>
+                <h3>Words</h3>
+                <div class="button"
+                     onclick="applySequence(['0b1101', '0b10111', '0b11111', '0b101'])">
+                    chbr
+                </div>
+                <div class="button"
+                     onclick="applySequence(['0b1101', '0b11101', '0b110000', '0b110000'])">
+                    coll
+                </div>
+                <div class="button"
+                     onclick="applySequence(['0b111101', '0b11101', '0b11101', '0b101'])">
+                    door
+                </div>
+                <div class="button"
+                     onclick="applySequence(['0b1011011', '0b1111', '0b11101', '0b1100111'])">
+                    StoP
+                </div>
+                <div class="button"
+                     onclick="applySequence(['0b1101', '0b11100', '0b101', '0b101'])">
+                    curr
+                </div>
+                <div class="button"
+                     onclick="applySequence(['0b1011011', '0b1111', '0b1111110', '0b1100111'])">
+                    StOP
+                </div>
+                <div class="button"
+                     onclick="applySequence(['0b1100111', '0b1110', '0b1110111', '0b111011'])">
+                    PLAy
+                </div>
+            </div>
+        </main>
+        <script>
+            function initializeDocument() {
+                let number = "\
+                  <table class=\"number\">\n\
+                    <tr class=\"thin-height\">\n\
+                      <td class=\"thin-width\"></td>\n\
+                      <td class=\"full-width segment\" \
+                          onclick=\"toggleSegment(this);\">6</td>\n\
+                      <td class=\"thin-width\"></td>\n\
+                      <td class=\"thin-width\"></td>\n\
+                    </tr>\n\
+                    <tr class=\"full-height\">\n\
+                      <td class=\"thin-width segment\" \
+                          onclick=\"toggleSegment(this);\">1</td>\n\
+                      <td class=\"full-width\"></td>\n\
+                      <td class=\"thin-width segment\" \
+                          onclick=\"toggleSegment(this);\">5</td>\n\
+                      <td class=\"thin-width\"></td>\n\
+                    </tr>\n\
+                    <tr class=\"thin-height\">\n\
+                      <td class=\"thin-width\"></td>\n\
+                      <td class=\"full-width segment\" \
+                          onclick=\"toggleSegment(this);\">0</td>\n\
+                      <td class=\"thin-width\"></td>\n\
+                      <td class=\"thin-width\"></td>\n\
+                    </tr>\n\
+                    <tr class=\"full-height\">\n\
+                      <td class=\"thin-width segment\" \
+                          onclick=\"toggleSegment(this);\">2</td>\n\
+                      <td class=\"full-width\"></td>\n\
+                      <td class=\"thin-width segment\" \
+                          onclick=\"toggleSegment(this);\">4</td>\n\
+                      <td class=\"thin-width\"></td>\n\
+                    </tr>\n\
+                    <tr class=\"thin-height\">\n\
+                      <td class=\"thin-width\"></td>\n\
+                      <td class=\"full-width segment\" \
+                          onclick=\"toggleSegment(this);\">3</td>\n\
+                      <td class=\"thin-width\"></td>\n\
+                      <td class=\"thin-width segment\" \
+                          onclick=\"toggleSegment(this);\">7</td>\n\
+                    </tr>\n\
+                    <tr>\n\
+                      <td colspan=\"3\" class=\"binary\" \
+                          onclick=\"selectCurrent(this);\">0b00000000</td>\n\
+                    </tr>\n\
+                  </table>\
+                ";
+                let display = document.getElementById("display");
+                let buttons = document.getElementById("buttons");
+                const digits = 4;
+                display.innerHTML = "";
+                for (let i = 0; i < digits; ++i) {
+                    display.innerHTML += number;
+                }
+                let width = (digits * 9).toString() + "em";
+                display.style.minWidth = width;
+                display.style.width = width;
+                display.style.maxWidth = width;
+                buttons.style.minWidth = (digits * 9 + 4).toString() + "em";
+                let firstBinary = document.getElementsByClassName("binary")[0];
+                firstBinary.classList.toggle("active");
+                document.addEventListener('keydown', (event) => {
+                  if (event.key === "ArrowLeft")
+                    stepSelection(-1);
+                  else if (event.key === "ArrowRight")
+                    stepSelection(1);
+                  else if (event.key === "Delete")
+                    applySingle("0b0");
+                }, false);
+            }
+            function toggleSegment(element) {
+              element.classList.toggle("active");
+              let table = element.parentNode.parentNode;
+              let mask = 1 << Number.parseInt(element.innerHTML);
+              let binary_elem = table.getElementsByClassName("binary")[0];
+              let binary_string = binary_elem.innerHTML.split("0b")[1];
+              let total = Number.parseInt(binary_string, 2);
+              total += element.classList.contains("active") ? mask : -mask;
+              let string = total.toString(2);
+              while (string.length < 8)
+                  string = "0" + string;
+              binary_elem.innerHTML = "0b" + string;
+            }
+            function applySingleElement(element, value) {
+                let segments = element.getElementsByClassName("segment");
+                let binaryStr = value.split("0b")[1];
+                let totalValue = Number.parseInt(binaryStr, 2);
+                for (let i = 0; i < segments.length; ++i) {
+                    let segment = segments[i];
+                    segment.classList.remove("active");
+                    let segmentValue = Number.parseInt(segment.innerHTML);
+                    if ((totalValue & (1 << segmentValue)) != 0)
+                        segment.classList.toggle("active");
+                }
+                let binary = element.getElementsByClassName("binary")[0];
+                while (binaryStr.length < 8)
+                    binaryStr = "0" + binaryStr;
+                binary.innerHTML = "0b" + binaryStr;
+            }
+            function applySingle(value) {
+                let numbers = document.getElementsByClassName("number");
+                for (let i = 0; i < numbers.length; ++i) {
+                    let number = numbers[i];
+                    let binary = number.getElementsByClassName("binary")[0];
+                    if (binary.classList.contains("active"))
+                        applySingleElement(number, value);
+                }
+            }
+            function applySequence(values) {
+                let numbers = document.getElementsByClassName("number");
+                for (let i = 0; i < numbers.length; ++i) {
+                    applySingleElement(numbers[i], values[i]);
+                }
+            }
+            function selectCurrent(element) {
+                let binaries = document.getElementsByClassName("binary");
+                for (let i = 0; i < binaries.length; ++i) {
+                    let binary = binaries[i];
+                    if (binary.classList.contains("active"))
+                        binary.classList.remove("active");
+                }
+                element.classList.toggle("active");
+            }
+            function stepSelection(value) {
+                let binaries = document.getElementsByClassName("binary");
+                let selected = 0;
+                for (let i = 0; i < binaries.length; ++i) {
+                    if (binaries[i].classList.contains("active")) {
+                        binaries[i].classList.remove("active");
+                        selected = i;
+                        break;
+                    }
+                }
+                let length = binaries.length;
+                selected = (selected + value + length) % length;
+                binaries[selected].classList.toggle("active");
+            }
+            initializeDocument();
+        </script>
+    </body>
+</html>
