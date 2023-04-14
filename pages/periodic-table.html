@@ -1,0 +1,1075 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>dfintha's Site</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="shortcut icon" type="image/png" href="../favicon.png" />
+        <style>
+            table {
+                margin: auto;
+            }
+            td.element {
+                padding: 0.1em;
+                width: 5em;
+                border: 0.1em solid var(--base1);
+                color: var(--base03);
+            }
+            td.element > p.symbol {
+                text-align: center;
+                margin: 0em;
+                line-height: 1em;
+            }
+            td.element > p.symbol > a {
+                font-weight: bold;
+                font-size: 1.75em;
+                color: var(--base03);
+            }
+            td.element > p.name > a {
+                color: var(--base03);
+            }
+            td.element > p.atomic-number {
+                display: inline-block;
+                vertical-align: top;
+                text-align: left;
+                width: calc(50% - 0.6em);
+                margin: 0em;
+                font-size: 0.75em;
+            }
+            td.element > p.electronegativity {
+                display: inline-block;
+                vertical-align: top;
+                text-align: right;
+                width: 50%;
+                margin: 0em;
+                font-size: 0.75em;
+            }
+            td.element > p.name {
+                margin: 0em;
+                font-size: 0.65em;
+                text-align: center;
+            }
+            td.element > p.atomic-mass {
+                margin: 0em;
+                font-size: 0.6em;
+            }
+            .radioactive {
+                border: 0.2em solid var(--magenta);
+            }
+            .artificial {
+                border: 0.2em solid var(--violet);
+            }
+            td.bordered-number {
+                text-align: center;
+                border: 0.1em solid #93A1A1;
+            }
+            td.blank-number {
+                text-align: center;
+                vertical-align: bottom
+            }
+            td.smallskip {
+                height: 1em;
+            }
+            td.padder {
+                text-align: center;
+                writing-mode: vertical-lr;
+                text-orientation: mixed;
+                border: 0.1em solid #93A1A1;
+                background-color: var(--green);
+                color: var(--base03);
+                font-size: 0.75em;
+            }
+            td.row-begin {
+                text-align: right;
+                vertical-align: center;
+                font-size: 0.75em;
+            }
+            td.row-begin.lower {
+                writing-mode: vertical-lr;
+                text-orientation: mixed;
+                text-align: center;
+                vertical-align: bottom;
+            }
+            .s-field { background-color: var(--blue); }
+            .p-field { background-color: var(--cyan); }
+            .d-field { background-color: var(--yellow); }
+            .f-field { background-color: var(--green); }
+            .explanation {
+                word-wrap: break-word;
+                vertical-align: top;
+            }
+        </style>
+    </head>
+    <body>
+        <table class="header">
+            <tr>
+                <td class="header-brand">
+                    <span class="header-title">dfintha's Site</span>
+                </td>
+                <td class="header-navigation">
+                    <a href="../index.html">Index</a>
+                    <a href="../pages.html">Pages</a>
+                </td>
+            </tr>
+        </table>
+        <main>
+            <h1>The Periodic Table of Elements</h1>
+            <table>
+              <tr>
+                <td></td>
+                <td class="bordered-number">1.</td>
+                <td class="bordered-number">2.</td>
+                <td class="bordered-number">3.</td>
+                <td></td>
+                <td class="bordered-number">4.</td>
+                <td class="bordered-number">5.</td>
+                <td class="bordered-number">6.</td>
+                <td class="bordered-number">7.</td>
+                <td class="bordered-number">8.</td>
+                <td class="bordered-number">9.</td>
+                <td class="bordered-number">10.</td>
+                <td class="bordered-number">11.</td>
+                <td class="bordered-number">12.</td>
+                <td class="bordered-number">13.</td>
+                <td class="bordered-number">14.</td>
+                <td class="bordered-number">15.</td>
+                <td class="bordered-number">16.</td>
+                <td class="bordered-number">17.</td>
+                <td class="bordered-number">18.</td>
+              </tr>
+              <tr>
+                <td class="smallskip"></td>
+              </tr>
+              <tr>
+                <td></td>
+                <td class="blank-number">I. A</td>
+                <td colspan="17"></td>
+                <td class="blank-number">VIII. A</td>
+              </tr>
+              <tr>
+                <td class="row-begin">1.</td>
+                <td class="element s-field">
+                  <p class="atomic-number">1</p>
+                  <p class="electronegativity">2.20</p>
+                  <p class="symbol">H</p>
+                  <p class="atomic-mass">1.008</p>
+                  <p class="name">Hydrogen</p>
+                </td>
+                <td class="blank-number">II. A</td>
+                <td colspan="2"></td>
+                <td colspan="9" rowspan="2" class="explanation">
+                    <ul>
+                        <li>
+                            Atomic numbers are shown on the top left,
+                            electronegativities are shown on the top right, and
+                            atomic masses are shown above the name of the
+                            element.
+                        </li>
+                        <li>
+                            The color of an element is defined by its electron
+                            configuration: Elements in the s-block are blue,
+                            the p-block are cyan, the d-block are yellow, and
+                            the f-block are green.
+                        </li>
+                        <li>
+                            Radioactive elements have magenta borders, and
+                            artificial elements have violet borders.
+                        </li>
+                        <li>
+                            Each element's name and symbol are clickable links
+                            to their respective Wikipedia page.
+                        </li>
+                    </ul>
+                </td>
+                <td class="blank-number">III. A</td>
+                <td class="blank-number">IV. A</td>
+                <td class="blank-number">V. A</td>
+                <td class="blank-number">VI. A</td>
+                <td class="blank-number">VII. A</td>
+                <td class="element s-field">
+                  <p class="atomic-number">1</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">He</p>
+                  <p class="atomic-mass">4.003</p>
+                  <p class="name">Helium</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-begin">2.</td>
+                <td class="element s-field">
+                  <p class="atomic-number">3</p>
+                  <p class="electronegativity">0.98</p>
+                  <p class="symbol">Li</p>
+                  <p class="atomic-mass">6.941</p>
+                  <p class="name">Lithium</p>
+                </td>
+                <td class="element s-field">
+                  <p class="atomic-number">4</p>
+                  <p class="electronegativity">1.57</p>
+                  <p class="symbol">Be</p>
+                  <p class="atomic-mass">9.012</p>
+                  <p class="name">Beryllium</p>
+                </td>
+                <td colspan="9"></td>
+                <td class="element p-field">
+                  <p class="atomic-number">5</p>
+                  <p class="electronegativity">2.04</p>
+                  <p class="symbol">B</p>
+                  <p class="atomic-mass">10.8100</p>
+                  <p class="name">Boron</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">6</p>
+                  <p class="electronegativity">2.55</p>
+                  <p class="symbol">C</p>
+                  <p class="atomic-mass">12.0110</p>
+                  <p class="name">Carbon</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">7</p>
+                  <p class="electronegativity">3.04</p>
+                  <p class="symbol">N</p>
+                  <p class="atomic-mass">14.0067</p>
+                  <p class="name">Nitrogen</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">8</p>
+                  <p class="electronegativity">3.44</p>
+                  <p class="symbol">O</p>
+                  <p class="atomic-mass">15.9994</p>
+                  <p class="name">Oxygen</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">9</p>
+                  <p class="electronegativity">3.98</p>
+                  <p class="symbol">F</p>
+                  <p class="atomic-mass">18.9984</p>
+                  <p class="name">Fluorine</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">10</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Ne</p>
+                  <p class="atomic-mass">20.1790</p>
+                  <p class="name">Neon</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-begin">3.</td>
+                <td class="element s-field">
+                  <p class="atomic-number">11</p>
+                  <p class="electronegativity">0.93</p>
+                  <p class="symbol">Na</p>
+                  <p class="atomic-mass">22.9898</p>
+                  <p class="name">Sodium</p>
+                </td>
+                <td class="element s-field">
+                  <p class="atomic-number">12</p>
+                  <p class="electronegativity">1.31</p>
+                  <p class="symbol">Mg</p>
+                  <p class="atomic-mass">24.3050</p>
+                  <p class="name">Magnesium</p>
+                </td>
+                <td class="blank-number">III. B</td>
+                <td></td>
+                <td class="blank-number">IV. B</td>
+                <td class="blank-number">V. B</td>
+                <td class="blank-number">VI. B</td>
+                <td class="blank-number">VII. B</td>
+                <td colspan="3" class="blank-number">┌──── VIII. B ────┐</td>
+                <td class="blank-number">I. B</td>
+                <td class="blank-number">II. B</td>
+                <td class="element p-field">
+                  <p class="atomic-number">13</p>
+                  <p class="electronegativity">1.61</p>
+                  <p class="symbol">Al</p>
+                  <p class="atomic-mass">26.9815</p>
+                  <p class="name">Aluminium</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">14</p>
+                  <p class="electronegativity">1.90</p>
+                  <p class="symbol">Si</p>
+                  <p class="atomic-mass">28.0855</p>
+                  <p class="name">Silicon</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">15</p>
+                  <p class="electronegativity">2.19</p>
+                  <p class="symbol">P</p>
+                  <p class="atomic-mass">30.9738</p>
+                  <p class="name">Phosphorus</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">16</p>
+                  <p class="electronegativity">2.58</p>
+                  <p class="symbol">S</p>
+                  <p class="atomic-mass">32.0600</p>
+                  <p class="name">Sulfur</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">17</p>
+                  <p class="electronegativity">3.16</p>
+                  <p class="symbol">Cl</p>
+                  <p class="atomic-mass">35.4530</p>
+                  <p class="name">Chlorine</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">18</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Ar</p>
+                  <p class="atomic-mass">39.9480</p>
+                  <p class="name">Argon</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-begin">4.</td>
+                <td class="element s-field">
+                  <p class="atomic-number">19</p>
+                  <p class="electronegativity">0.82</p>
+                  <p class="symbol">K</p>
+                  <p class="atomic-mass">39.0983</p>
+                  <p class="name">Potassium</p>
+                </td>
+                <td class="element s-field">
+                  <p class="atomic-number">20</p>
+                  <p class="electronegativity">1.00</p>
+                  <p class="symbol">Ca</p>
+                  <p class="atomic-mass">40.0800</p>
+                  <p class="name">Calcium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">21</p>
+                  <p class="electronegativity">1.36</p>
+                  <p class="symbol">Sc</p>
+                  <p class="atomic-mass">44.9559</p>
+                  <p class="name">Scandium</p>
+                </td>
+                <td></td>
+                <td class="element d-field">
+                  <p class="atomic-number">22</p>
+                  <p class="electronegativity">1.54</p>
+                  <p class="symbol">Ti</p>
+                  <p class="atomic-mass">47.9000</p>
+                  <p class="name">Titanium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">23</p>
+                  <p class="electronegativity">1.63</p>
+                  <p class="symbol">V</p>
+                  <p class="atomic-mass">50.9415</p>
+                  <p class="name">Vanadium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">24</p>
+                  <p class="electronegativity">1.66</p>
+                  <p class="symbol">Cr</p>
+                  <p class="atomic-mass">51.9960</p>
+                  <p class="name">Chromium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">25</p>
+                  <p class="electronegativity">1.55</p>
+                  <p class="symbol">Mn</p>
+                  <p class="atomic-mass">54.9380</p>
+                  <p class="name">Manganese</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">26</p>
+                  <p class="electronegativity">1.83</p>
+                  <p class="symbol">Fe</p>
+                  <p class="atomic-mass">55.8470</p>
+                  <p class="name">Iron</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">27</p>
+                  <p class="electronegativity">1.88</p>
+                  <p class="symbol">Co</p>
+                  <p class="atomic-mass">58.9332</p>
+                  <p class="name">Cobalt</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">28</p>
+                  <p class="electronegativity">1.91</p>
+                  <p class="symbol">Ni</p>
+                  <p class="atomic-mass">58.7000</p>
+                  <p class="name">Nickel</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">29</p>
+                  <p class="electronegativity">1.90</p>
+                  <p class="symbol">Cu</p>
+                  <p class="atomic-mass">63.5460</p>
+                  <p class="name">Copper</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">30</p>
+                  <p class="electronegativity">1.65</p>
+                  <p class="symbol">Zn</p>
+                  <p class="atomic-mass">65.3800</p>
+                  <p class="name">Zinc</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">31</p>
+                  <p class="electronegativity">1.81</p>
+                  <p class="symbol">Ga</p>
+                  <p class="atomic-mass">69.7200</p>
+                  <p class="name">Gallium</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">32</p>
+                  <p class="electronegativity">2.01</p>
+                  <p class="symbol">Ge</p>
+                  <p class="atomic-mass">72.5900</p>
+                  <p class="name">Germanium</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">33</p>
+                  <p class="electronegativity">2.18</p>
+                  <p class="symbol">As</p>
+                  <p class="atomic-mass">74.9216</p>
+                  <p class="name">Arsenic</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">34</p>
+                  <p class="electronegativity">2.55</p>
+                  <p class="symbol">Se</p>
+                  <p class="atomic-mass">78.9600</p>
+                  <p class="name">Selenium</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">35</p>
+                  <p class="electronegativity">2.96</p>
+                  <p class="symbol">Br</p>
+                  <p class="atomic-mass">79.9040</p>
+                  <p class="name">Bromine</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">36</p>
+                  <p class="electronegativity">3.00</p>
+                  <p class="symbol">Kr</p>
+                  <p class="atomic-mass">83.8000</p>
+                  <p class="name">Krypton</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-begin">5.</td>
+                <td class="element s-field">
+                  <p class="atomic-number">37</p>
+                  <p class="electronegativity">0.82</p>
+                  <p class="symbol">Rb</p>
+                  <p class="atomic-mass">85.4678</p>
+                  <p class="name">Rubídium</p>
+                </td>
+                <td class="element s-field">
+                  <p class="atomic-number">38</p>
+                  <p class="electronegativity">0.95</p>
+                  <p class="symbol">Sr</p>
+                  <p class="atomic-mass">87.6200</p>
+                  <p class="name">Strontium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">39</p>
+                  <p class="electronegativity">1.22</p>
+                  <p class="symbol">Y</p>
+                  <p class="atomic-mass">88.9059</p>
+                  <p class="name">Yttrium</p>
+                </td>
+                <td></td>
+                <td class="element d-field">
+                  <p class="atomic-number">40</p>
+                  <p class="electronegativity">1.33</p>
+                  <p class="symbol">Zr</p>
+                  <p class="atomic-mass">91.2200</p>
+                  <p class="name">Zirconium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">41</p>
+                  <p class="electronegativity">1.60</p>
+                  <p class="symbol">Nb</p>
+                  <p class="atomic-mass">92.9064</p>
+                  <p class="name">Niobium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">42</p>
+                  <p class="electronegativity">2.16</p>
+                  <p class="symbol">Mo</p>
+                  <p class="atomic-mass">95.9400</p>
+                  <p class="name">Molybdenum</p>
+                </td>
+                <td class="element d-field radioactive">
+                  <p class="atomic-number">43</p>
+                  <p class="electronegativity">1.90</p>
+                  <p class="symbol">Tc</p>
+                  <p class="atomic-mass">(98)</p>
+                  <p class="name">Technetium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">44</p>
+                  <p class="electronegativity">2.20</p>
+                  <p class="symbol">Ru</p>
+                  <p class="atomic-mass">101.0700</p>
+                  <p class="name">Ruthenium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">45</p>
+                  <p class="electronegativity">2.28</p>
+                  <p class="symbol">Rh</p>
+                  <p class="atomic-mass">102.9055</p>
+                  <p class="name">Rhodium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">46</p>
+                  <p class="electronegativity">2.20</p>
+                  <p class="symbol">Pd</p>
+                  <p class="atomic-mass">106.4000</p>
+                  <p class="name">Palladium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">47</p>
+                  <p class="electronegativity">1.93</p>
+                  <p class="symbol">Ag</p>
+                  <p class="atomic-mass">107.8680</p>
+                  <p class="name">Silver</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">48</p>
+                  <p class="electronegativity">1.69</p>
+                  <p class="symbol">Cd</p>
+                  <p class="atomic-mass">112.4100</p>
+                  <p class="name">Cadmium</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">49</p>
+                  <p class="electronegativity">1.78</p>
+                  <p class="symbol">In</p>
+                  <p class="atomic-mass">114.8200</p>
+                  <p class="name">Indium</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">50</p>
+                  <p class="electronegativity">1.96</p>
+                  <p class="symbol">Sn</p>
+                  <p class="atomic-mass">118.6900</p>
+                  <p class="name">Tin</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">51</p>
+                  <p class="electronegativity">2.05</p>
+                  <p class="symbol">Sb</p>
+                  <p class="atomic-mass">121.7500</p>
+                  <p class="name">Antimony</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">52</p>
+                  <p class="electronegativity">2.10</p>
+                  <p class="symbol">Te</p>
+                  <p class="atomic-mass">127.6000</p>
+                  <p class="name">Tellurium</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">53</p>
+                  <p class="electronegativity">2.66</p>
+                  <p class="symbol">I</p>
+                  <p class="atomic-mass">126.9045</p>
+                  <p class="name">Iodine</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">54</p>
+                  <p class="electronegativity">2.67</p>
+                  <p class="symbol">Xe</p>
+                  <p class="atomic-mass">131.3000</p>
+                  <p class="name">Xenon</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="row-begin">6.</td>
+                <td class="element s-field">
+                  <p class="atomic-number">55</p>
+                  <p class="electronegativity">0.79</p>
+                  <p class="symbol">Cs</p>
+                  <p class="atomic-mass">132.9054</p>
+                  <p class="name">Caesium</p>
+                </td>
+                <td class="element s-field">
+                  <p class="atomic-number">56</p>
+                  <p class="electronegativity">0.89</p>
+                  <p class="symbol">Ba</p>
+                  <p class="atomic-mass">137.3300</p>
+                  <p class="name">Barium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">57</p>
+                  <p class="electronegativity">1.10</p>
+                  <p class="symbol">La</p>
+                  <p class="atomic-mass">138.9055</p>
+                  <p class="name">Lanthanum</p>
+                </td>
+                <td class="padder">Lanthanoids</td>
+                <td class="element d-field">
+                  <p class="atomic-number">72</p>
+                  <p class="electronegativity">1.30</p>
+                  <p class="symbol">Hf</p>
+                  <p class="atomic-mass">178.4900</p>
+                  <p class="name">Hafnium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">73</p>
+                  <p class="electronegativity">1.50</p>
+                  <p class="symbol">Ta</p>
+                  <p class="atomic-mass">180.9479</p>
+                  <p class="name">Tantalum</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">74</p>
+                  <p class="electronegativity">2.36</p>
+                  <p class="symbol">W</p>
+                  <p class="atomic-mass">183.8500</p>
+                  <p class="name">Tungsten</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">75</p>
+                  <p class="electronegativity">1.90</p>
+                  <p class="symbol">Re</p>
+                  <p class="atomic-mass">186.2070</p>
+                  <p class="name">Rhenium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">76</p>
+                  <p class="electronegativity">2.20</p>
+                  <p class="symbol">Os</p>
+                  <p class="atomic-mass">190.2000</p>
+                  <p class="name">Osmium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">77</p>
+                  <p class="electronegativity">2.20</p>
+                  <p class="symbol">Ir</p>
+                  <p class="atomic-mass">192.2200</p>
+                  <p class="name">Iridium</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">78</p>
+                  <p class="electronegativity">2.28</p>
+                  <p class="symbol">Pt</p>
+                  <p class="atomic-mass">195.0900</p>
+                  <p class="name">Platinum</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">79</p>
+                  <p class="electronegativity">2.54</p>
+                  <p class="symbol">Au</p>
+                  <p class="atomic-mass">196.9665</p>
+                  <p class="name">Gold</p>
+                </td>
+                <td class="element d-field">
+                  <p class="atomic-number">80</p>
+                  <p class="electronegativity">2.00</p>
+                  <p class="symbol">Hg</p>
+                  <p class="atomic-mass">200.5900</p>
+                  <p class="name">Mercury</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">81</p>
+                  <p class="electronegativity">1.62</p>
+                  <p class="symbol">Tl</p>
+                  <p class="atomic-mass">204.3700</p>
+                  <p class="name">Thallium</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">82</p>
+                  <p class="electronegativity">2.33</p>
+                  <p class="symbol">Pb</p>
+                  <p class="atomic-mass">207.2000</p>
+                  <p class="name">Lead</p>
+                </td>
+                <td class="element p-field">
+                  <p class="atomic-number">83</p>
+                  <p class="electronegativity">2.02</p>
+                  <p class="symbol">Bi</p>
+                  <p class="atomic-mass">208.9804</p>
+                  <p class="name">Bismuth</p>
+                </td>
+                <td class="element p-field radioactive">
+                  <p class="atomic-number">84</p>
+                  <p class="electronegativity">2.00</p>
+                  <p class="symbol">Po</p>
+                  <p class="atomic-mass">(209)</p>
+                  <p class="name">Polonium</p>
+                </td>
+                <td class="element p-field radioactive">
+                  <p class="atomic-number">85</p>
+                  <p class="electronegativity">2.20</p>
+                  <p class="symbol">At</p>
+                  <p class="atomic-mass">(210)</p>
+                  <p class="name">Astatine</p>
+                </td>
+                <td class="element p-field radioactive">
+                  <p class="atomic-number">86</p>
+                  <p class="electronegativity">2.20</p>
+                  <p class="symbol">Rn</p>
+                  <p class="atomic-mass">(222)</p>
+                  <p class="name">Radon</p>
+                </td>
+              </tr>
+
+              <tr>
+                <td class="row-begin">7.</td>
+                <td class="element s-field radioactive">
+                  <p class="atomic-number">87</p>
+                  <p class="electronegativity">0.70</p>
+                  <p class="symbol">Fr</p>
+                  <p class="atomic-mass">(223)</p>
+                  <p class="name">Francium</p>
+                </td>
+                <td class="element s-field radioactive">
+                  <p class="atomic-number">88</p>
+                  <p class="electronegativity">0.90</p>
+                  <p class="symbol">Ra</p>
+                  <p class="atomic-mass">(226)</p>
+                  <p class="name">Radium</p>
+                </td>
+                <td class="element d-field radioactive">
+                  <p class="atomic-number">89</p>
+                  <p class="electronegativity">1.10</p>
+                  <p class="symbol">Ac</p>
+                  <p class="atomic-mass">(227)</p>
+                  <p class="name">Actinium</p>
+                </td>
+                <td class="padder">Actinoids</td>
+                <td class="element d-field artificial">
+                  <p class="atomic-number">104</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Rf</p>
+                  <p class="atomic-mass">(265)</p>
+                  <p class="name">Raderfordium</p>
+                </td>
+                <td class="element d-field artificial">
+                  <p class="atomic-number">105</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Db</p>
+                  <p class="atomic-mass">(268)</p>
+                  <p class="name">Dubnium</p>
+                </td>
+                <td class="element d-field artificial">
+                  <p class="atomic-number">106</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Sg</p>
+                  <p class="atomic-mass">(271)</p>
+                  <p class="name">Seaborgium</p>
+                </td>
+                <td class="element d-field artificial">
+                  <p class="atomic-number">107</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Bh</p>
+                  <p class="atomic-mass">(270)</p>
+                  <p class="name">Bohrium</p>
+                </td>
+                <td class="element d-field artificial">
+                  <p class="atomic-number">108</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Hs</p>
+                  <p class="atomic-mass">(277)</p>
+                  <p class="name">Hassium</p>
+                </td>
+                <td class="element d-field artificial">
+                  <p class="atomic-number">109</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Mt</p>
+                  <p class="atomic-mass">(276)</p>
+                  <p class="name">Meitnerium</p>
+                </td>
+                <td class="element d-field artificial">
+                  <p class="atomic-number">110</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Ds</p>
+                  <p class="atomic-mass">(281)</p>
+                  <p class="name">Darmstadtium</p>
+                </td>
+                <td class="element d-field artificial">
+                  <p class="atomic-number">111</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Rg</p>
+                  <p class="atomic-mass">(280)</p>
+                  <p class="name">Roentgenium</p>
+                </td>
+                <td class="element d-field artificial">
+                  <p class="atomic-number">112</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Cn</p>
+                  <p class="atomic-mass">(285)</p>
+                  <p class="name">Copernicium</p>
+                </td>
+                <td class="element p-field artificial">
+                  <p class="atomic-number">113</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Nh</p>
+                  <p class="atomic-mass">(286)</p>
+                  <p class="name">Nihonium</p>
+                </td>
+                <td class="element p-field artificial">
+                  <p class="atomic-number">114</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Fl</p>
+                  <p class="atomic-mass">(289)</p>
+                  <p class="name">Flerovium</p>
+                </td>
+                <td class="element p-field artificial">
+                  <p class="atomic-number">115</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Mc</p>
+                  <p class="atomic-mass">(288)</p>
+                  <p class="name">Moscovium</p>
+                </td>
+                <td class="element p-field artificial">
+                  <p class="atomic-number">116</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Lv</p>
+                  <p class="atomic-mass">(293)</p>
+                  <p class="name">Livermorium</p>
+                </td>
+                <td class="element p-field artificial">
+                  <p class="atomic-number">117</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Ts</p>
+                  <p class="atomic-mass">(294)</p>
+                  <p class="name">Tennessine</p>
+                </td>
+                <td class="element p-field artificial">
+                  <p class="atomic-number">118</p>
+                  <p class="electronegativity"></p>
+                  <p class="symbol">Og</p>
+                  <p class="atomic-mass">(294)</p>
+                  <p class="name">Oganesson</p>
+                </td>
+              </tr>
+              <tr>
+                <td class="smallskip"></td>
+              </tr>
+              <tr>
+                <td colspan="5" class="row-begin lower">Lanthanoids</td>
+                <td class="element f-field">
+                  <p class="atomic-number">58</p>
+                  <p class="electronegativity">1.12</p>
+                  <p class="symbol">Ce</p>
+                  <p class="atomic-mass">140.1200</p>
+                  <p class="name">Cerium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">59</p>
+                  <p class="electronegativity">1.13</p>
+                  <p class="symbol">Pr</p>
+                  <p class="atomic-mass">140.9077</p>
+                  <p class="name">Praseodymium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">60</p>
+                  <p class="electronegativity">1.14</p>
+                  <p class="symbol">Nd</p>
+                  <p class="atomic-mass">144.2400</p>
+                  <p class="name">Neodymium</p>
+                </td>
+                <td class="element f-field radioactive">
+                  <p class="atomic-number">61</p>
+                  <p class="electronegativity">1.13</p>
+                  <p class="symbol">Pm</p>
+                  <p class="atomic-mass">(145)</p>
+                  <p class="name">Promethium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">62</p>
+                  <p class="electronegativity">1.17</p>
+                  <p class="symbol">Sm</p>
+                  <p class="atomic-mass">150.4000</p>
+                  <p class="name">Samarium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">63</p>
+                  <p class="electronegativity">1.20</p>
+                  <p class="symbol">Eu</p>
+                  <p class="atomic-mass">151.9600</p>
+                  <p class="name">Europium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">64</p>
+                  <p class="electronegativity">1.20</p>
+                  <p class="symbol">Gd</p>
+                  <p class="atomic-mass">157.2500</p>
+                  <p class="name">Gadolinium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">65</p>
+                  <p class="electronegativity">1.10</p>
+                  <p class="symbol">Tb</p>
+                  <p class="atomic-mass">158.9254</p>
+                  <p class="name">Terbium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">66</p>
+                  <p class="electronegativity">1.22</p>
+                  <p class="symbol">Dy</p>
+                  <p class="atomic-mass">162.5000</p>
+                  <p class="name">Dysprosium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">67</p>
+                  <p class="electronegativity">1.23</p>
+                  <p class="symbol">Ho</p>
+                  <p class="atomic-mass">164.9304</p>
+                  <p class="name">Holmium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">68</p>
+                  <p class="electronegativity">1.24</p>
+                  <p class="symbol">Er</p>
+                  <p class="atomic-mass">167.2600</p>
+                  <p class="name">Erbium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">69</p>
+                  <p class="electronegativity">1.25</p>
+                  <p class="symbol">Tm</p>
+                  <p class="atomic-mass">168.9342</p>
+                  <p class="name">Thulium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">70</p>
+                  <p class="electronegativity">1.10</p>
+                  <p class="symbol">Yb</p>
+                  <p class="atomic-mass">173.0400</p>
+                  <p class="name">Ytterbium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">71</p>
+                  <p class="electronegativity">1.27</p>
+                  <p class="symbol">Lu</p>
+                  <p class="atomic-mass">174.9670</p>
+                  <p class="name">Lutetium</p>
+                </td>
+              </tr>
+              <tr>
+                <td colspan="5" class="row-begin lower">Actinoids</td>
+                <td class="element f-field">
+                  <p class="atomic-number">90</p>
+                  <p class="electronegativity">1.30</p>
+                  <p class="symbol">Th</p>
+                  <p class="atomic-mass">232.0381</p>
+                  <p class="name">Thorium</p>
+                </td>
+                <td class="element f-field radioactive">
+                  <p class="atomic-number">91</p>
+                  <p class="electronegativity">1.50</p>
+                  <p class="symbol">Pa</p>
+                  <p class="atomic-mass">231.0359</p>
+                  <p class="name">Protactinium</p>
+                </td>
+                <td class="element f-field">
+                  <p class="atomic-number">92</p>
+                  <p class="electronegativity">1.38</p>
+                  <p class="symbol">U</p>
+                  <p class="atomic-mass">238.0290</p>
+                  <p class="name">Uranium</p>
+                </td>
+                <td class="element f-field radioactive">
+                  <p class="atomic-number">93</p>
+                  <p class="electronegativity">1.36</p>
+                  <p class="symbol">Np</p>
+                  <p class="atomic-mass">(237)</p>
+                  <p class="name">Neptunium</p>
+                </td>
+                <td class="element f-field radioactive">
+                  <p class="atomic-number">94</p>
+                  <p class="electronegativity">1.28</p>
+                  <p class="symbol">Pu</p>
+                  <p class="atomic-mass">(244)</p>
+                  <p class="name">Plutonium</p>
+                </td>
+                <td class="element f-field artificial">
+                  <p class="atomic-number">95</p>
+                  <p class="electronegativity">1.13</p>
+                  <p class="symbol">Am</p>
+                  <p class="atomic-mass">(243)</p>
+                  <p class="name">Americium</p>
+                </td>
+                <td class="element f-field artificial">
+                  <p class="atomic-number">96</p>
+                  <p class="electronegativity">1.28</p>
+                  <p class="symbol">Cm</p>
+                  <p class="atomic-mass">(247)</p>
+                  <p class="name">Curium</p>
+                </td>
+                <td class="element f-field artificial">
+                  <p class="atomic-number">97</p>
+                  <p class="electronegativity">1.30</p>
+                  <p class="symbol">Bk</p>
+                  <p class="atomic-mass">(247)</p>
+                  <p class="name">Berkelium</p>
+                </td>
+                <td class="element f-field artificial">
+                  <p class="atomic-number">98</p>
+                  <p class="electronegativity">1.30</p>
+                  <p class="symbol">Cf</p>
+                  <p class="atomic-mass">(251)</p>
+                  <p class="name">Californium</p>
+                </td>
+                <td class="element f-field artificial">
+                  <p class="atomic-number">99</p>
+                  <p class="electronegativity">1.30</p>
+                  <p class="symbol">Es</p>
+                  <p class="atomic-mass">(252)</p>
+                  <p class="name">Einsteinium</p>
+                </td>
+                <td class="element f-field artificial">
+                  <p class="atomic-number">100</p>
+                  <p class="electronegativity">1.30</p>
+                  <p class="symbol">Fm</p>
+                  <p class="atomic-mass">(257)</p>
+                  <p class="name">Fermium</p>
+                </td>
+                <td class="element f-field artificial">
+                  <p class="atomic-number">101</p>
+                  <p class="electronegativity">1.30</p>
+                  <p class="symbol">Md</p>
+                  <p class="atomic-mass">(258)</p>
+                  <p class="name">Mendelevium</p>
+                </td>
+                <td class="element f-field artificial">
+                  <p class="atomic-number">102</p>
+                  <p class="electronegativity">1.30</p>
+                  <p class="symbol">No</p>
+                  <p class="atomic-mass">(250)</p>
+                  <p class="name">Nobelium</p>
+                </td>
+                <td class="element f-field artificial">
+                  <p class="atomic-number">103</p>
+                  <p class="electronegativity">1.29</p>
+                  <p class="symbol">Lr</p>
+                  <p class="atomic-mass">(262)</p>
+                  <p class="name">Lawrencium</p>
+                </td>
+              </tr>
+            </table>
+        </main>
+        <script>
+            function createWikipediaLinks() {
+                let names = document.getElementsByClassName("name");
+                for (let i = 0; i < names.length; ++i) {
+                    let name = names[i].innerHTML;
+                    let a_name = document.createElement("a");
+                    a_name.href = "https://en.wikipedia.org/wiki/" + name;
+                    a_name.innerHTML = name;
+                    names[i].innerHTML = "";
+                    names[i].appendChild(a_name);
+                    let parent = names[i].parentNode;
+                    let symbol = parent.getElementsByClassName("symbol")[0];
+                    let a_symbol = document.createElement("a");
+                    a_symbol.href = "https://en.wikipedia.org/wiki/" + name;
+                    a_symbol.innerHTML = symbol.innerHTML;
+                    symbol.innerHTML = "";
+                    symbol.appendChild(a_symbol);
+                }
+            }
+            createWikipediaLinks();
+        </script>
+    </body>
+</html>
