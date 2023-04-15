@@ -1057,6 +1057,7 @@
                     let name = names[i].innerHTML;
                     let a_name = document.createElement("a");
                     a_name.href = "https://en.wikipedia.org/wiki/" + name;
+                    a_name.target = "_blank";
                     a_name.innerHTML = name;
                     names[i].innerHTML = "";
                     names[i].appendChild(a_name);
@@ -1064,6 +1065,7 @@
                     let symbol = parent.getElementsByClassName("symbol")[0];
                     let a_symbol = document.createElement("a");
                     a_symbol.href = "https://en.wikipedia.org/wiki/" + name;
+                    a_symbol.target = "_blank";
                     a_symbol.innerHTML = symbol.innerHTML;
                     symbol.innerHTML = "";
                     symbol.appendChild(a_symbol);
