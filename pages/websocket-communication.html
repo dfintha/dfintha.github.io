@@ -1,0 +1,118 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>dfintha's Site</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="shortcut icon" type="image/svg" href="../favicon.svg" />
+        <style>
+            .wrapper {
+                margin: auto;
+            }
+            .wrapper td {
+                text-align: center;
+                padding: 1em;
+            }
+            #message, #response {
+                display: block;
+                color: var(--base1);
+                background: var(--base03);
+                border: none;
+                border-radius: 1em;
+                padding: 1em;
+                width: 80ch;
+                height: 25ch;
+                font-family: var(--font-monospace);
+                font-size: 1em;
+                text-align: left;
+                resize: none;
+                outline: none;
+                overflow: scroll;
+            }
+            #ip {
+                color: var(--base1);
+                background: var(--base03);
+                border: none;
+                border-radius: 1em;
+                width: 60ch;
+                font-size: 1.2em;
+                font-family: var(--font-monospace);
+                text-align: center;
+                padding: 0.1em 0.5em 0.1em 0.5em;
+                outline: none;
+            }
+            #send {
+                width: 4em;
+                height: 2.2em;
+                color: var(--base1);
+                background: var(--base03);
+                border: none;
+                border-radius: 1em;
+                font-size: 1.2em;
+                font-family: var(--font-sans-serif);
+                margin-top: 0.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <script src="../scripts/zoom_image.js"></script>
+        <table class="header">
+            <tr>
+                <td class="header-brand">
+                    <span class="header-title">dfintha's Site</span>
+                </td>
+                <td class="header-navigation">
+                    <a href="../index.html">Index</a>
+                    <a href="../pages.html">Pages</a>
+                </td>
+            </tr>
+        </table>
+        <main>
+            <h1>WebSocket Communication Utility</h1>
+            <p>
+                Insecure WebSocket connections are not allowed by modern
+                browsers by default, you may need to manually enable insecure
+                operations in your browser for this tool to function properly.
+            </p>
+            <table class="wrapper">
+                <tr>
+                    <td>
+                        <h2>Message</h2>
+                        <textarea cols="80" rows="25" id="message"></textarea>
+                    </td>
+                    <td>
+                        <h2>Response</h2>
+                        <pre id="response"></pre>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <p>IP Address</p>
+                        <input type="text" value="" id="ip"></input>
+                        <br />
+                        <input type="button" value="Send" id="send" class="clickable"></input>
+                    </td>
+                </tr>
+            </table>
+        </main>
+        <script>
+            document.getElementById("send").onclick = function() {
+                document.getElementById("message").value = JSON.stringify(
+                    JSON.parse(document.getElementById("message").value),
+                    null,
+                    4
+                );
+                const ip = document.getElementById("ip").value;
+                const socket = new WebSocket(ip);
+                socket.addEventListener("message", function (event) {
+                    readable = JSON.stringify(JSON.parse(event.data), null, 4);
+                    document.getElementById("response").innerHTML = readable;
+                    socket.close()
+                });
+                socket.addEventListener("open", function (event) {
+                    socket.send(document.getElementById("message").value);
+                });
+            }
+        </script>
+    </body>
+</html>
