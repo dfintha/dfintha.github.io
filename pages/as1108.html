@@ -40,14 +40,20 @@
                 margin: 0.2em;
                 text-align: center;
                 vertical-align: middle;
-                width: 54px;
+                width: 3em;
                 height: 2.2em;
                 padding-top: 0.8em;
                 background: var(--base03);
                 border-radius: 50%;
                 font-size: 1.2em;
                 font-family: var(--font-monospace);
-                cursor: pointer;
+            }
+            .button:hover {
+                background: var(--base03);
+                filter: brightness(110%);
+            }
+            .button:active {
+                filter: brightness(80%);
             }
             .thin-width { width: 10px; }
             .full-width { width: 50px; }
@@ -82,48 +88,48 @@
             </div>
             <div id="buttons">
                 <h3>Digits</h3>
-                <div class="button" onclick="applySingle('0b01111110')">0</div>
-                <div class="button" onclick="applySingle('0b00110000')">1</div>
-                <div class="button" onclick="applySingle('0b01101101')">2</div>
-                <div class="button" onclick="applySingle('0b01111001')">3</div>
-                <div class="button" onclick="applySingle('0b00110011')">4</div>
-                <div class="button" onclick="applySingle('0b01011011')">5</div>
-                <div class="button" onclick="applySingle('0b01011111')">6</div>
-                <div class="button" onclick="applySingle('0b01110000')">7</div>
-                <div class="button" onclick="applySingle('0b01111111')">8</div>
-                <div class="button" onclick="applySingle('0b01111011')">9</div>
+                <div class="button clickable" onclick="applySingle('0b01111110')">0</div>
+                <div class="button clickable" onclick="applySingle('0b00110000')">1</div>
+                <div class="button clickable" onclick="applySingle('0b01101101')">2</div>
+                <div class="button clickable" onclick="applySingle('0b01111001')">3</div>
+                <div class="button clickable" onclick="applySingle('0b00110011')">4</div>
+                <div class="button clickable" onclick="applySingle('0b01011011')">5</div>
+                <div class="button clickable" onclick="applySingle('0b01011111')">6</div>
+                <div class="button clickable" onclick="applySingle('0b01110000')">7</div>
+                <div class="button clickable" onclick="applySingle('0b01111111')">8</div>
+                <div class="button clickable" onclick="applySingle('0b01111011')">9</div>
                 <h3>Uppercase Letters</h3>
-                <div class="button" onclick="applySingle('0b01110111')">A</div>
-                <div class="button" onclick="applySingle('0b01001110')">C</div>
-                <div class="button" onclick="applySingle('0b01001111')">E</div>
-                <div class="button" onclick="applySingle('0b01000111')">F</div>
-                <div class="button" onclick="applySingle('0b00110111')">H</div>
-                <div class="button" onclick="applySingle('0b00110000')">I</div>
-                <div class="button" onclick="applySingle('0b00111000')">J</div>
-                <div class="button" onclick="applySingle('0b00001110')">L</div>
-                <div class="button" onclick="applySingle('0b01111110')">O</div>
-                <div class="button" onclick="applySingle('0b01100111')">P</div>
-                <div class="button" onclick="applySingle('0b01011011')">S</div>
-                <div class="button" onclick="applySingle('0b00111110')">U</div>
-                <div class="button" onclick="applySingle('0b01101101')">Z</div>
+                <div class="button clickable" onclick="applySingle('0b01110111')">A</div>
+                <div class="button clickable" onclick="applySingle('0b01001110')">C</div>
+                <div class="button clickable" onclick="applySingle('0b01001111')">E</div>
+                <div class="button clickable" onclick="applySingle('0b01000111')">F</div>
+                <div class="button clickable" onclick="applySingle('0b00110111')">H</div>
+                <div class="button clickable" onclick="applySingle('0b00110000')">I</div>
+                <div class="button clickable" onclick="applySingle('0b00111000')">J</div>
+                <div class="button clickable" onclick="applySingle('0b00001110')">L</div>
+                <div class="button clickable" onclick="applySingle('0b01111110')">O</div>
+                <div class="button clickable" onclick="applySingle('0b01100111')">P</div>
+                <div class="button clickable" onclick="applySingle('0b01011011')">S</div>
+                <div class="button clickable" onclick="applySingle('0b00111110')">U</div>
+                <div class="button clickable" onclick="applySingle('0b01101101')">Z</div>
                 <h3>Lowercase Letters</h3>
-                <div class="button" onclick="applySingle('0b00011111')">b</div>
-                <div class="button" onclick="applySingle('0b00001101')">c</div>
-                <div class="button" onclick="applySingle('0b00111101')">d</div>
-                <div class="button" onclick="applySingle('0b00010111')">h</div>
-                <div class="button" onclick="applySingle('0b00110000')">l</div>
-                <div class="button" onclick="applySingle('0b00010101')">n</div>
-                <div class="button" onclick="applySingle('0b00011101')">o</div>
-                <div class="button" onclick="applySingle('0b00000101')">r</div>
-                <div class="button" onclick="applySingle('0b00001111')">t</div>
-                <div class="button" onclick="applySingle('0b00011100')">u</div>
-                <div class="button" onclick="applySingle('0b00111011')">y</div>
-                <div class="button" onclick="applySingle('0b01011101')">ö</div>
-                <div class="button" onclick="applySingle('0b01011100')">ü</div>
+                <div class="button clickable" onclick="applySingle('0b00011111')">b</div>
+                <div class="button clickable" onclick="applySingle('0b00001101')">c</div>
+                <div class="button clickable" onclick="applySingle('0b00111101')">d</div>
+                <div class="button clickable" onclick="applySingle('0b00010111')">h</div>
+                <div class="button clickable" onclick="applySingle('0b00110000')">l</div>
+                <div class="button clickable" onclick="applySingle('0b00010101')">n</div>
+                <div class="button clickable" onclick="applySingle('0b00011101')">o</div>
+                <div class="button clickable" onclick="applySingle('0b00000101')">r</div>
+                <div class="button clickable" onclick="applySingle('0b00001111')">t</div>
+                <div class="button clickable" onclick="applySingle('0b00011100')">u</div>
+                <div class="button clickable" onclick="applySingle('0b00111011')">y</div>
+                <div class="button clickable" onclick="applySingle('0b01011101')">ö</div>
+                <div class="button clickable" onclick="applySingle('0b01011100')">ü</div>
                 <h3>Special Characters</h3>
-                <div class="button" onclick="applySingle('0b00000001')">-</div>
-                <div class="button" onclick="applySingle('0b00001000')">_</div>
-                <div class="button" onclick="applySingle('0b01100011')">°</div>
+                <div class="button clickable" onclick="applySingle('0b00000001')">-</div>
+                <div class="button clickable" onclick="applySingle('0b00001000')">_</div>
+                <div class="button clickable" onclick="applySingle('0b01100011')">°</div>
                 <h3>Words</h3>
                 <div class="button"
                      onclick="applySequence(['0b1101', '0b10111', '0b11111', '0b101'])">

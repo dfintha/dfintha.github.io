@@ -43,6 +43,20 @@ main ul li a {
     margin-left: 0em;
 }
 
+/* Clickable Buttons */
+
+.clickable {
+    cursor: pointer;
+}
+
+.clickable:hover {
+    background: var(--base03);
+    filter: brightness(110%);
+}
+.clickable:active {
+    filter: brightness(80%);
+}
+
 /* Scrollbar */
 
 ::-webkit-scrollbar {
@@ -50,11 +64,15 @@ main ul li a {
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--base03);
+    background: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
     background: var(--base01);
+}
+
+::-webkit-scrollbar-corner {
+    background: transparent;
 }
 
 /* Header */
