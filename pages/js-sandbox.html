@@ -1,0 +1,187 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>dfintha's Site</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="shortcut icon" type="image/svg" href="../favicon.svg" />
+        <style>
+            #code {
+                display: block;
+                color: var(--base1);
+                background: var(--base03);
+                border: none;
+                border-radius: 1em;
+                border-top: 1em solid var(--base03);
+                padding: 0em 1em 0em 1em;
+                width: 90%;
+                height: 30em;
+                min-width: 80ch;
+                margin: 1em auto 1em auto;
+                font-family: var(--font-monospace);
+                font-size: 1em;
+                text-align: left;
+                resize: none;
+                outline: none;
+                overflow: scroll;
+            }
+            .run-console {
+                width: 90%;
+                margin: auto;
+            }
+            .run-wrapper {
+                width: 6em;
+            }
+            #console {
+                color: var(--base1);
+                background: var(--base03);
+                font-family: var(--font-monospace);
+                border: none;
+                border-radius: 1em;
+                border-top: 1em solid var(--base03);
+                padding: 0em 1em 0em 1em;
+                height: 10em;
+                max-height: 10em;
+                overflow: scroll;
+                vertical-align: top;
+            }
+            #console > p {
+                margin: 0em;
+            }
+            #run {
+                width: 4em;
+                height: 2.2em;
+                color: var(--base1);
+                background: var(--base03);
+                border: none;
+                border-radius: 1em;
+                font-size: 1.2em;
+                font-family: var(--font-sans-serif);
+                margin-top: 0.5em;
+            }
+            .entry.log { color: var(--base1); }
+            .entry.debug { color: var(--base01); }
+            .entry.error { color: var(--red); }
+            .entry.warning { color: var(--yellow); }
+        </style>
+    </head>
+    <body>
+        <script src="../scripts/zoom_image.js"></script>
+        <table class="header">
+            <tr>
+                <td class="header-brand">
+                    <span class="header-title">dfintha's Site</span>
+                </td>
+                <td class="header-navigation">
+                    <a href="../index.html">Index</a>
+                    <a href="../pages.html">Pages</a>
+                </td>
+            </tr>
+        </table>
+        <main>
+            <h1>JavaScript Sandbox</h1>
+            <textarea id="code"></textarea>
+            <table class="run-console">
+                <tr>
+                    <td class="run-wrapper">
+                        <input type="button"
+                               value="Run"
+                               id="run"
+                               class="clickable"
+                               onclick="executeCode();">
+                        </input>
+                    </td>
+                    <td><div id="console"></div></td>
+                </tr>
+            </table>
+        </main>
+        <script>
+            let consoleObject = document.getElementById("console");
+            let consoleCounters = new Object();
+            let consolePrefix = " ";
+            function executeCode() {
+                let code = document.getElementById("code").value;
+                eval(code);
+                consoleObject.scrollTo(0, consoleObject.scrollHeight);
+            };
+            function addConsoleMessage(label) {
+                let line = "<p class='entry " + label + "'>" + consolePrefix;
+                for (let i = 1; i < arguments.length; ++i) {
+                    line += arguments[i];
+                    line += " ";
+                }
+                line += "</p>";
+                consoleObject.innerHTML += line;
+            };
+            console.assert = function() {
+                if (arguments[0])
+                    return;
+                addConsoleMessage(
+                    "error",
+                    "Assertion failed:",
+                    ...[...arguments].slice(1)
+                );
+            };
+            console.clear = function() {
+                consoleObject.innerHTML = "";
+            };
+            console.count = function() {
+                let label = (arguments.length === 0) ? "default" : arguments[0];
+                let counter = consoleCounters[label];
+                counter = (counter === undefined) ? 1 : counter + 1;
+                consoleCounters[label] = counter;
+                addConsoleMessage("log", label + ": " + counter);
+            };
+            console.countReset = function() {
+                let label = (arguments.length === 0) ? "default" : arguments[0];
+                consoleCounters[label] = 0;
+            };
+            console.debug = function() {
+                addConsoleMessage("debug", ...arguments);
+            };
+            console.dir = function(object) {
+                // TODO **
+            };
+            console.dirxml = function(object) {
+                // TODO **
+            };
+            console.error = function() {
+                addConsoleMessage("error", ...arguments);
+            };
+            console.group = function() {
+                consolePrefix = ">>" + consolePrefix;
+            };
+            console.groupCollapsed = function() {
+                consolePrefix = ">>" + consolePrefix;
+            };
+            console.groupEnd = function() {
+                if (consolePrefix.length >= 2)
+                    consolePrefix = consolePrefix.substring(2);
+            };
+            console.info = function() {
+                addConsoleMessage("info", ...arguments);
+            };
+            console.log = function() {
+                addConsoleMessage("log", ...arguments);
+            };
+            console.table = function(object) {
+                // TODO **
+            };
+            console.time = function(object) {
+                // TODO *
+            };
+            console.timeEnd = function(object) {
+                // TODO *
+            };
+            console.timeLog = function(object) {
+                // TODO *
+            };
+            console.trace = function(object) {
+                // TODO ***
+            };
+            console.warn = function() {
+                addConsoleMessage("warning", ...arguments);
+            };
+        </script>
+    </body>
+</html>
