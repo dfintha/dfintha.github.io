@@ -1,0 +1,125 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>dfintha's Site</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="shortcut icon" type="image/svg" href="../favicon.svg" />
+        <style>
+            #regex {
+                min-width: 100px;
+                width: calc(50vw);
+                height: 20px;
+                overflow: none;
+            }
+
+            #subjects {
+                min-width: 200px;
+                width: calc(95vw - 70px);
+                text-align: right;
+                white-space: nowrap
+            }
+
+            #results {
+                width: 25px;
+                color: var(--base01);
+            }
+
+            #subjects, #results {
+                min-height: 300px;
+                height: calc(95vh - 300px);
+                overflow: scroll;
+                line-height: 24px;
+            }
+
+            #regex, #subjects {
+                background: var(--base03);
+                color: var(--base2);
+            }
+
+            #regex, #subjects, #results {
+                display: block;
+                border: none;
+                border-radius: 1em;
+                resize: none;
+                outline: none;
+                padding: 1em;
+                font-family: var(--font-monospace);
+            }
+
+            .positive {
+                color: var(--green);
+            }
+
+            .negative {
+                color: var(--red);
+            }
+        </style>
+    </head>
+    <body>
+        <table class="header">
+            <tr>
+                <td class="header-brand">
+                    <span class="header-title">dfintha's Site</span>
+                </td>
+                <td class="header-navigation">
+                    <a href="../index.html">Index</a>
+                    <a href="../pages.html">Pages</a>
+                </td>
+            </tr>
+        </table>
+        <main>
+            <h1>RegEx Playground</h1>
+            <p>
+                This page can be used to check regular expressions with strings
+                specified by the user. The top text area is where the user
+                should enter the regular expression, while the bottom area is
+                where the strings to check should be entered. If the given
+                regular expression matches a line, a plus sign is shown next to
+                it, while if it does not match it, a minus sign is shown. Empty
+                lines are omitted.
+            </p>
+            <p>
+                Strings are separated with newlines, so multi-line matching is
+                not supported. Only regular expressions with ECMAScript syntax
+                are supported.
+            </p>
+            <table>
+                <tr>
+                    <td colspan="2"><textarea id="regex"></textarea></td>
+                </tr>
+                <tr>
+                    <td><textarea id="subjects"></textarea></td>
+                    <td><div id="results"></div></td>
+                </tr>
+            </table>
+        </main>
+        <script>
+            let regex = document.getElementById("regex");
+            let subjects = document.getElementById("subjects");
+            let results = document.getElementById("results");
+
+            let onChange = function() {
+                let lines = subjects.value.split("\n");
+                let matcher = new RegExp(regex.value);
+
+                results.innerHTML = "";
+                for (let i = 0; i < lines.length; ++i) {
+                    let line = lines[i];
+                    if (line === "") {
+                        results.innerHTML += "<br />";
+                        continue;
+                    }
+                    if (matcher.test(line)) {
+                        results.innerHTML += "<b class='positive'>+</b><br />";
+                    } else {
+                        results.innerHTML += "<b class='negative'>-</b><br />";
+                    }
+                }
+            };
+
+            subjects.addEventListener("input", onChange);
+            regex.addEventListener("input", onChange);
+        </script>
+    </body>
+</html>
