@@ -1,0 +1,174 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>dfintha's Site</title>
+        <link rel="stylesheet" href="../style.css" />
+        <link rel="shortcut icon" type="image/svg" href="../favicon.svg" />
+        <style>
+            ul, ol {
+                padding-left: 2em;
+            }
+
+            #vodka_alcohol, #vodka_dl, #water_dl, #sugar_dkg {
+                color: var(--base2);
+                background: var(--base03);
+                font-family: var(--font-monospace);
+                padding: 0.5em;
+                border: none;
+                border-radius: 0.5em;
+                resize: none;
+                outline: none;
+                height: 1.5em;
+            }
+
+            #drink_alcohol {
+                font-weight: bold;
+            }
+
+            td {
+                display: inline-block;
+                vertical-align: middle;
+                padding: 0em 0.05em 0em 0.5em;
+            }
+
+            .label {
+                width: 12em;
+                text-align: right;
+                padding-right: 0.5em;
+            }
+        </style>
+    </head>
+    <body>
+        <table class="header">
+            <tr>
+                <td class="header-brand">
+                    <span class="header-title">dfintha's Site</span>
+                </td>
+                <td class="header-navigation">
+                    <a href="../index.html">Index</a>
+                    <a href="../pages.html">Pages</a>
+                </td>
+            </tr>
+        </table>
+        <main>
+            <h1>Crème de Menthe</h1>
+            <p>
+                <a href="https://en.wikipedia.org/wiki/Cr%C3%A8me_de_menthe">
+                    Crème de menthe
+                </a> is a mint liqueur originating from France. It has a strong
+                mint taste with sweet tones of flavor, and has a 25-30% alcohol
+                content by volume.
+                <br />
+                Since this recipe gets its taste directly from mint leaves and
+                does not contain any artificial preservatives, it should be kept
+                in a refrigerator.
+            </p>
+            <h2>Ingredients</h2>
+            <ul>
+                <li>5 dl vodka (with 37.5-40% alcohol content)</li>
+                <li>60-70 mint leaves</li>
+                <li>1 dl water (filtered water is recommended)</li>
+                <li>10 dkg sugar</li>
+                <li>juice of half a lime</li>
+                <li>
+                    a few drops of green food colouring (one could also mix
+                    yellow and green food colouring, too)
+                </li>
+            </ul>
+            <h2>Preparation</h2>
+            <ol>
+                <li>Rinse the mint leaves and dry them using paper towels.</li>
+                <li>
+                    Shred the leaves to tiny pieces and drop them into a glass
+                    container where the vodka would fit along with them.
+                </li>
+                <li>
+                    Pour the vodka over the leaves and close the container.
+                    Leave it for 2-3 days.
+                </li>
+                <li>
+                    Heat up the water in a pan while adding the sugar into it
+                    until the sugar completely dissolves in the water.
+                </li>
+                <li>
+                    Let the sugar-water mix cool down or cool it down by
+                    partially submerging the pan into cold water.
+                </li>
+                <li>
+                    Drain the mint-infused vodka into the mix along with the
+                    lime juice. Don't be afraid to apply some pressure in the
+                    wet leaves to force the vodka out of them.
+                </li>
+                <li>
+                    Add the food coloring and funnel the drink into a glass
+                    container.
+                </li>
+            </ol>
+            <h2>Fine-Tuning</h2>
+            <p>
+                You can fine-tune some of the ingredients and calculate the
+                alcohol content by volume for the final product here.
+                <br />
+                <i>
+                    These fields are not validated. The percentage is always
+                    updated when any of them changes.
+                </i>
+            </p>
+            <table>
+                <tr>
+                    <td class="label">Vodka: Alcohol Content: </td>
+                    <td><textarea id="vodka_alcohol">37.5</textarea></td>
+                    <td>%</td>
+                </tr>
+                <tr>
+                    <td class="label">Vodka: Amount: </td>
+                    <td><textarea id="vodka_dl">5</textarea></td>
+                    <td>dl</td>
+                </tr>
+                <tr>
+                    <td class="label">Water: Amount: </td>
+                    <td><textarea id="water_dl">1</textarea></td>
+                    <td>dl</td>
+                </tr>
+                <tr>
+                    <td class="label">Sugar: Amount: </td>
+                    <td><textarea id="sugar_dkg">10</textarea></td>
+                    <td>dkg</td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        The end result will approximately have an alcohol
+                        content of <span id="drink_alcohol">25%</span> by
+                        volume.
+                    </td>
+                </tr>
+            </table>
+        </main>
+        <script>
+            let vodka_alcohol = document.getElementById("vodka_alcohol");
+            let vodka_dl = document.getElementById("vodka_dl");
+            let water_dl = document.getElementById("water_dl");
+            let sugar_dkg = document.getElementById("sugar_dkg");
+            let drink_alcohol = document.getElementById("drink_alcohol");
+
+            function calculate_alcohol() {
+                let vodka_ratio = parseFloat(vodka_alcohol.value) / 100;
+                let vodka_cl = parseFloat(vodka_dl.value) * 10;
+                let water_cl = parseFloat(water_dl.value) * 10;
+                let sugar_cl = parseFloat(sugar_dkg.value) * 1.2;
+                let drink_volume = vodka_cl + water_cl + sugar_cl + 3;
+                let alcohol_volume = vodka_ratio * vodka_cl;
+                let drink_ratio = (alcohol_volume / drink_volume);
+                drink_alcohol.innerHTML = (drink_ratio * 100).toFixed(2) + "%";
+            }
+
+            vodka_alcohol.addEventListener("input", calculate_alcohol);
+            vodka_dl.addEventListener("input", calculate_alcohol);
+            water_dl.addEventListener("input", calculate_alcohol);
+            sugar_dkg.addEventListener("input", calculate_alcohol);
+
+            calculate_alcohol();
+        </script>
+    </body>
+</html>
